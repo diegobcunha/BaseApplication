@@ -2,18 +2,22 @@ package com.diegocunha.baseapplication.view.templates
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import com.diegocunha.baseapplication.core.resource.LoadingType
 import com.diegocunha.baseapplication.core.resource.Resource
 import com.diegocunha.baseapplication.coroutines.DispatchersProvider
-import com.diegocunha.baseapplication.coroutines.fetchValue
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.launch
 
 abstract class ResourceViewModel<T>(dispatchersProvider: DispatchersProvider) :
     CoroutineViewModel(dispatchersProvider), ResourceFetcher<T> {
     protected open val _resourceLiveData: MutableSharedFlow<Resource<T>> by lazy {
         MutableSharedFlow<Resource<T>>().apply {
-            fetchValue(loadContent(LoadingType.REPLACE))
+            viewModelScope.launch(dispatchersProvider.io) {
+                emitAll(loadContent(LoadingType.REPLACE))
+            }
         }
     }
 
@@ -29,7 +33,7 @@ abstract class ResourceViewModel<T>(dispatchersProvider: DispatchersProvider) :
 
     open fun forceLoad(loadingType: LoadingType = LoadingType.REPLACE) {
         launchMain {
-            _resourceLiveData.fetchValue(loadContent(loadingType))
+            _resourceLiveData.emitAll(loadContent(loadingType))
         }
     }
 

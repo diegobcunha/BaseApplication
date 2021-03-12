@@ -2,6 +2,7 @@ package com.diegocunha.baseapplication.core.api.rest
 
 import com.diegocunha.baseapplication.BuildConfig
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.scope.Scope
@@ -12,7 +13,11 @@ val apiModule = module {
         okHttp3()
     }
 
-    single { Moshi.Builder().build() }
+    single {
+        Moshi.Builder()
+            .addLast(KotlinJsonAdapterFactory())
+            .build()
+    }
 }
 
 private fun Scope.okHttp3(): OkHttpClient {

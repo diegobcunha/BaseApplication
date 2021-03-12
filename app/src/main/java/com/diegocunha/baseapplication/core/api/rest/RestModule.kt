@@ -9,13 +9,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 val restModule = module {
-    single { retrofit(get(), get()) }
+
+
 }
 
 private fun Scope.retrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
     return Retrofit.Builder()
         .client(okHttpClient)
-        .addConverterFactory(MoshiConverterFactory.create())
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .addCallAdapterFactory(ResourceCallAdapterFactory())
         .build()
