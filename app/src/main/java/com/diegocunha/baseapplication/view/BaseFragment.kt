@@ -7,7 +7,7 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.diegocunha.baseapplication.core.resource.LoadingType
 import com.diegocunha.baseapplication.view.extensions.withOwner
-import com.diegocunha.baseapplication.view.templates.ResourceViewModel
+import com.diegocunha.baseapplication.view.templates.viewmodel.ResourceViewModel
 
 abstract class BaseFragment<T>(@LayoutRes layoutResId: Int = 0) : Fragment(layoutResId) {
 

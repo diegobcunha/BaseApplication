@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
+        <item name="android:minHeight">?android:attr/actionBarSize</item>
+        <item name="android:background">?colorPrimary</item>
+        <item name="popupTheme">@style/Theme.MaterialComponents.Light.NoActionBar</item>
+    </style>
+</resources>

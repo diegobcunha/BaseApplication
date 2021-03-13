@@ -1,4 +1,4 @@
-package com.diegocunha.baseapplication.view.templates
+package com.diegocunha.baseapplication.view.templates.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData

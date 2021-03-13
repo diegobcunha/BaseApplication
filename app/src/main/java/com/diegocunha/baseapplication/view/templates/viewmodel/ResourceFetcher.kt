@@ -1,8 +1,7 @@
-package com.diegocunha.baseapplication.view.templates
+package com.diegocunha.baseapplication.view.templates.viewmodel
 
 import androidx.lifecycle.LiveData
 import com.diegocunha.baseapplication.core.resource.Resource
-import kotlinx.coroutines.flow.Flow
 
 /**
  * Resource loader of fragment

@@ -1,4 +1,4 @@
-package com.diegocunha.baseapplication.view.templates
+package com.diegocunha.baseapplication.view.templates.viewmodel
 
 import com.diegocunha.baseapplication.core.resource.LoadingType
 import com.diegocunha.baseapplication.core.resource.Resource
