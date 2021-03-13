@@ -11,6 +11,9 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.launch
 
+/**
+ * Base class responsible to communicate with data layer
+ */
 abstract class ResourceViewModel<T>(dispatchersProvider: DispatchersProvider) :
     CoroutineViewModel(dispatchersProvider), ResourceFetcher<T> {
     protected open val _resourceLiveData: MutableSharedFlow<Resource<T>> by lazy {

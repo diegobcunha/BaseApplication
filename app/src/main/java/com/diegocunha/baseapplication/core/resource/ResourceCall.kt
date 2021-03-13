@@ -6,6 +6,9 @@ import retrofit2.Callback
 import retrofit2.HttpException
 import retrofit2.Response
 
+/**
+ * Class responsible to enqueue and check responses from Retrofit
+ */
 class ResourceCall<T>(proxy: Call<T>) :
     CallDelegate<T, Resource<T>>(proxy) {
     override fun enqueueImpl(callback: Callback<Resource<T>>) = proxy.enqueue(object : Callback<T> {

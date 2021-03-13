@@ -8,6 +8,9 @@ import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
+/**
+ * Adapter to convert responses to Resource response
+ */
 class ResourceCallAdapterFactory() : CallAdapter.Factory() {
 
     override fun get(

@@ -2,8 +2,7 @@ package com.diegocunha.baseapplication.core.resource
 
 import androidx.annotation.Keep
 import com.diegocunha.baseapplication.core.exception.StringResourceException
-import com.diegocunha.baseapplication.core.fromJson
-import com.squareup.moshi.Moshi
+import com.diegocunha.baseapplication.core.json.fromJson
 import okhttp3.ResponseBody
 import org.json.JSONException
 import org.json.JSONObject

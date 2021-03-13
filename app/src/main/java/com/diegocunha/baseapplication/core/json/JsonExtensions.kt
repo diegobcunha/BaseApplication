@@ -1,6 +1,5 @@
-package com.diegocunha.baseapplication.core
+package com.diegocunha.baseapplication.core.json
 
-import com.diegocunha.baseapplication.core.json.MoshiManager
 import com.squareup.moshi.Moshi
 import java.io.Reader
 

@@ -5,6 +5,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * Delegate class responsible to convert Retrofit response to resource
+ */
 abstract class CallDelegate<I, O>(protected val proxy: Call<I>) : Call<O> {
     override fun enqueue(callback: Callback<O>) = enqueueImpl(callback)
     override fun clone(): Call<O> = cloneImpl()
